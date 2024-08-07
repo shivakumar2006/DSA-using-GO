@@ -1,4 +1,4 @@
-// Print the following pattern for the given N number of rows 
+// Print the following pattern for the given N number of rows
 // Pattern for N = 4;
 // 4444
 // 4444
@@ -10,13 +10,16 @@ package main
 import "fmt"
 
 func main() {
-	printPattern(4)
+	var n int
+	fmt.Print("Enter the number of rows : ")
+	fmt.Scan(&n)
+	printPattern(n)
 }
 
-func printPattern() int n {
+func printPattern(n int) {
 	for i := 1; i <= n; i++ {
 		for j := 1; j <= n; j++ {
-			fmt.Println(n)
+			fmt.Print(n)
 		}
 		fmt.Println()
 	}
