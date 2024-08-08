@@ -94,19 +94,49 @@
 // 3333
 // 4444
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	printPattern(4)
+// }
+
+// func printPattern(n int) {
+// 	for i := 1; i <= n; i++ {
+// 		for j := 1; j <= n; j++ {
+// 			fmt.Print(i)
+// 		}
+// 		fmt.Println()
+// 	}
+// }
+//_______________________________________________________________________________________________________________________________
+
+// BINARY SEARCH.....
+
 package main
 
 import "fmt"
 
 func main() {
-	printPattern(4)
+	// var array = [...]int{2, 3, 5, 7, 8, 9, 1}
+
+	fmt.Print(binarySearch(new int[], {2, 3, 5, 7, 8, 9, 1}, 7))
+
 }
 
-func printPattern(n int) {
-	for i := 1; i <= n; i++ {
-		for j := 1; j <= n; j++ {
-			fmt.Print(i)
+func binarySearch(x int, int[] array) {
+	l := 1
+	r := array.length - 1
+	for l <= r {
+		mid := (l + r) / 2
+		if array[mid] == x {
+			return mid
+		} else if x < array[mid] {
+			r = mid - 1
+		} else {
+			l = mid + 1
 		}
-		fmt.Println()
 	}
+	return -1
 }
