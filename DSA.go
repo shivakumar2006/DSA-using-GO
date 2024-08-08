@@ -114,29 +114,31 @@
 
 // BINARY SEARCH.....
 
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-func main() {
-	// var array = [...]int{2, 3, 5, 7, 8, 9, 1}
+// func main() {
+// 	array := []int{1, 2, 3, 5, 7, 8, 9}
 
-	fmt.Print(binarySearch(new int[], {2, 3, 5, 7, 8, 9, 1}, 7))
+// 	result := binarySearch(array, 7)
 
-}
+// 	fmt.Println(result)
 
-func binarySearch(x int, int[] array) {
-	l := 1
-	r := array.length - 1
-	for l <= r {
-		mid := (l + r) / 2
-		if array[mid] == x {
-			return mid
-		} else if x < array[mid] {
-			r = mid - 1
-		} else {
-			l = mid + 1
-		}
-	}
-	return -1
-}
+// }
+
+// func binarySearch(array []int, x int) int {
+// 	l := 0
+// 	r := len(array) - 1
+// 	for l <= r {
+// 		mid := (l + r) / 2
+// 		if array[mid] == x {
+// 			return mid
+// 		} else if x < array[mid] {
+// 			r = mid - 1
+// 		} else {
+// 			l = mid + 1
+// 		}
+// 	}
+// 	return -1
+// }
