@@ -147,30 +147,134 @@
 // PATTERN 5
 // Given an array of size . The tsk is to left rotate array by D elements where D <= N.
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	array := []int{1, 2, 3, 4, 5}
+// 	result := leftRotate(array, 2)
+// 	fmt.Println(result)
+// }
+
+// func leftRotate(array []int, d int) []int {
+// 	n := len(array)
+// 	reverse(array, 0, d-1)
+// 	reverse(array, d, n-1)
+// 	reverse(array, 0, n-1)
+// 	return array
+// }
+
+// func reverse(array []int, i int, j int) {
+// 	for i < j {
+// 		temp := array[i]
+// 		array[i] = array[j]
+// 		array[j] = temp
+// 		i++
+// 		j--
+// 	}
+// }
+// _______________________________________________________________________________________________________________________________
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	fmt.Print(search([]int{5, 6, 7, 8, 9, 10, 1, 2, 3}, 0, 8, 10))
+// }
+
+// func search(array []int, l int, r int, key int) int {
+// 	pivot := getPivot(array, l, r)
+// 	e := binarySearch(array, l, pivot, key)
+// 	if e == -1 {
+// 		binarySearch(array, pivot+1, r, key)
+// 	}
+// 	return e
+// }
+
+// func getPivot(array []int, l int, r int) int {
+// 	for l <= r {
+// 		mid := (l + r) / 2
+// 		if array[mid] < array[mid]+1 {
+// 			return mid
+// 		} else if array[mid] < array[mid]-1 {
+// 			return mid - 1
+// 		} else if array[mid] > array[l] {
+// 			l = mid + 1
+// 		} else {
+// 			r = mid - 1
+// 		}
+// 	}
+// 	return -1
+// }
+
+// func binarySearch(array []int, l int, r int, x int) int {
+// 	for l <= r {
+// 		mid := (l + r) / 2
+// 		if array[mid] == x {
+// 			return mid
+// 		} else if array[mid] < x {
+// 			l = mid + 1
+// 		} else {
+// 			r = mid - 1
+// 		}
+// 	}
+// 	return - 1
+// }
+
 package main
 
 import "fmt"
 
 func main() {
-	array := []int{1, 2, 3, 4, 5}
-	result := leftRotate(array, 2)
-	fmt.Println(result)
+	array := []int{5, 6, 7, 8, 9, 10, 1, 2, 3}
+	key := 10
+	fmt.Println(search(array, 0, len(array)-1, key))
 }
 
-func leftRotate(array []int, d int) []int {
-	n := len(array)
-	reverse(array, 0, d-1)
-	reverse(array, d, n-1)
-	reverse(array, 0, n-1)
-	return array
-}
-
-func reverse(array []int, i int, j int) {
-	for i < j {
-		temp := array[i]
-		array[i] = array[j]
-		array[j] = temp
-		i++
-		j--
+func search(array []int, l int, r int, key int) int {
+	pivot := getPivot(array, l, r)
+	if pivot == -1 { // array is not rotated
+		return binarySearch(array, l, r, key)
 	}
+	if array[pivot] == key {
+		return pivot
+	}
+	if array[l] <= key {
+		return binarySearch(array, l, pivot-1, key)
+	}
+	return binarySearch(array, pivot+1, r, key)
+}
+
+func getPivot(array []int, l int, r int) int {
+	for l <= r {
+		mid := (l + r) / 2
+		if mid < r && array[mid] > array[mid+1] {
+			return mid
+		}
+		if mid > l && array[mid] < array[mid-1] {
+			return mid - 1
+		}
+		if array[l] >= array[mid] {
+			r = mid - 1
+		} else {
+			l = mid + 1
+		}
+	}
+	return -1
+}
+
+func binarySearch(array []int, l int, r int, x int) int {
+	for l <= r {
+		mid := (l + r) / 2
+		if array[mid] == x {
+			return mid
+		} else if array[mid] < x {
+			l = mid + 1
+		} else {
+			r = mid - 1
+		}
+	}
+	return -1
 }
