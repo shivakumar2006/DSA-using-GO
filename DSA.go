@@ -144,7 +144,6 @@
 // }
 // _______________________________________________________________________________________________________________________________
 
-
 // PATTERN 5
 // Given an array of size . The tsk is to left rotate array by D elements where D <= N.
 
@@ -153,11 +152,20 @@ package main
 import "fmt"
 
 func main() {
-	array := []int {1, 2, 3, 4, 5}
-	result := 
+	array := []int{1, 2, 3, 4, 5}
+	result := leftRotate(array, 2)
+	fmt.Println(result)
 }
 
-func reverse() {
+func leftRotate(array []int, d int) []int {
+	n := len(array)
+	reverse(array, 0, d-1)
+	reverse(array, d, n-1)
+	reverse(array, 0, n-1)
+	return array
+}
+
+func reverse(array []int, i int, j int) {
 	for i < j {
 		temp := array[i]
 		array[i] = array[j]
@@ -166,8 +174,3 @@ func reverse() {
 		j--
 	}
 }
-
-
-
-
-
