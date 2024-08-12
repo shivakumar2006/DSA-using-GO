@@ -23,31 +23,31 @@
 // 	}
 // }
 
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-func main() {
-	array := []int{2, 3, 4, 5, 8, 9, 55}
+// func main() {
+// 	array := []int{2, 3, 4, 5, 8, 9, 55}
 
-	result := binarySearch(array, 8)
+// 	result := binarySearch(array, 8)
 
-	fmt.Println(result)
-}
+// 	fmt.Println(result)
+// }
 
-func binarySearch(array []int, x int) int {
-	l := 0
-	r := len(array) - 1
-	for l <= r {
-		mid := (l + r) / 2
-		if array[mid] == x {
-			return mid
-		} else if x < array[mid] {
-			r = mid - 1
-		} else {
-			l = mid + 1
-		}
+// func binarySearch(array []int, x int) int {
+// 	l := 0
+// 	r := len(array) - 1
+// 	for l <= r {
+// 		mid := (l + r) / 2
+// 		if array[mid] == x {
+// 			return mid
+// 		} else if x < array[mid] {
+// 			r = mid - 1
+// 		} else {
+// 			l = mid + 1
+// 		}
 
-	}
-	return -1
-}
+// 	}
+// 	return -1
+// }

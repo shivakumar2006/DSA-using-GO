@@ -142,3 +142,32 @@
 // 	}
 // 	return -1
 // }
+// _______________________________________________________________________________________________________________________________
+
+
+// PATTERN 5
+// Given an array of size . The tsk is to left rotate array by D elements where D <= N.
+
+package main
+
+import "fmt"
+
+func main() {
+	array := []int {1, 2, 3, 4, 5}
+	result := 
+}
+
+func reverse() {
+	for i < j {
+		temp := array[i]
+		array[i] = array[j]
+		array[j] = temp
+		i++
+		j--
+	}
+}
+
+
+
+
+
