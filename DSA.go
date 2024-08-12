@@ -223,6 +223,64 @@
 // 	return - 1
 // }
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	array := []int{5, 6, 7, 8, 9, 10, 1, 2, 3}
+// 	key := 10
+// 	fmt.Println(search(array, 0, len(array)-1, key))
+// }
+
+// func search(array []int, l int, r int, key int) int {
+// 	pivot := getPivot(array, l, r)
+// 	if pivot == -1 { // array is not rotated
+// 		return binarySearch(array, l, r, key)
+// 	}
+// 	if array[pivot] == key {
+// 		return pivot
+// 	}
+// 	if array[l] <= key {
+// 		return binarySearch(array, l, pivot-1, key)
+// 	}
+// 	return binarySearch(array, pivot+1, r, key)
+// }
+
+// func getPivot(array []int, l int, r int) int {
+// 	for l <= r {
+// 		mid := (l + r) / 2
+// 		if mid < r && array[mid] > array[mid+1] {
+// 			return mid
+// 		}
+// 		if mid > l && array[mid] < array[mid-1] {
+// 			return mid - 1
+// 		}
+// 		if array[l] >= array[mid] {
+// 			r = mid - 1
+// 		} else {
+// 			l = mid + 1
+// 		}
+// 	}
+// 	return -1
+// }
+
+// func binarySearch(array []int, l int, r int, x int) int {
+// 	for l <= r {
+// 		mid := (l + r) / 2
+// 		if array[mid] == x {
+// 			return mid
+// 		} else if array[mid] < x {
+// 			l = mid + 1
+// 		} else {
+// 			r = mid - 1
+// 		}
+// 	}
+// 	return -1
+// }
+
+// Given a sorted and rotated array A of N distincts elements which is rotated at some point, and given an element key. The task is to find the index of given element key in the array A
+
 package main
 
 import "fmt"
@@ -235,13 +293,11 @@ func main() {
 
 func search(array []int, l int, r int, key int) int {
 	pivot := getPivot(array, l, r)
-	if pivot == -1 { // array is not rotated
+	if pivot == -1 {
 		return binarySearch(array, l, r, key)
-	}
-	if array[pivot] == key {
+	} else if array[pivot] == key {
 		return pivot
-	}
-	if array[l] <= key {
+	} else if array[l] <= key {
 		return binarySearch(array, l, pivot-1, key)
 	}
 	return binarySearch(array, pivot+1, r, key)
