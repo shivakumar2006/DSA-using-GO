@@ -233,7 +233,35 @@
 // }
 //_______________________________________________________________________________________________________________________________
 
-// Convert any Decimal number n into Biinanry number.
+// Convert any Decimal number n into Binanry number.
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"strconv"
+// )
+
+// func main() {
+// 	fmt.Println(decimalToBinary(17))
+// }
+
+// func decimalToBinary(n int) string {
+// 	if n == 0 {
+// 		return "0"
+// 	}
+
+// 	var result string
+// 	for n > 0 {
+// 		remainder := n % 2
+// 		result = strconv.Itoa(remainder) + result
+// 		n = n / 2
+// 	}
+// 	return result
+// }
+// _______________________________________________________________________________________________________________________________
+
+// Convert any Binary Number into Decimal numbers...>
 
 package main
 
@@ -243,19 +271,11 @@ import (
 )
 
 func main() {
-	fmt.Println(decimalToBinary(17))
-}
-
-func decimalToBinary(n int) string {
-	if n == 0 {
-		return "0"
+	binaryStr := "10011"
+	decimalValue, err := strconv.ParseInt(binaryStr, 2, 0)
+	if err != nil {
+		fmt.Println("Error : ", err)
+		return
 	}
-
-	var result string
-	for n > 0 {
-		remainder := n % 2
-		result = strconv.Itoa(remainder) + result
-		n = n / 2
-	}
-	return result
+	fmt.Println(decimalValue)
 }
