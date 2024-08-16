@@ -263,19 +263,52 @@
 
 // Convert any Binary Number into Decimal numbers...>
 
-package main
+// package main
 
-import (
-	"fmt"
-	"strconv"
-)
+// import (
+// 	"fmt"
+// 	"strconv"
+// )
 
-func main() {
-	binaryStr := "10011"
-	decimalValue, err := strconv.ParseInt(binaryStr, 2, 0)
-	if err != nil {
-		fmt.Println("Error : ", err)
-		return
-	}
-	fmt.Println(decimalValue)
-}
+// func main() {
+// 	binaryStr := "10011"
+// 	decimalValue, err := strconv.ParseInt(binaryStr, 2, 0)
+// 	if err != nil {
+// 		fmt.Println("Error : ", err)
+// 		return
+// 	}
+// 	fmt.Println(decimalValue)
+// }
+
+//_______________________________________________________________________________________________________________________________
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	fmt.Println(5 >> 1) // Bitwise Right
+// 	fmt.Println(5 << 1) // Bitwise Right
+// }
+//_______________________________________________________________________________________________________________________________
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	fmt.Println((322468 & 1) == 1)
+// 	fmt.Println((3224689 & 1) == 1)
+// }
+//_______________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
