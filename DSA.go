@@ -302,23 +302,46 @@
 // }
 //_______________________________________________________________________________________________________________________________
 
-package main
+// package main
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
-func main() {
-	n := 10
-	m := 2
-	fmt.Println(findDifference(n, m))
-}
+// func main() {
+// 	n := 10
+// 	m := 2
+// 	fmt.Println(findDifference(n, m))
+// }
 
-func findDifference(n int, m int) int {
-	x := n / m
-	number1 := m * x * (x + 1) / 2
-	number2 := n*(n+1)/2 - number1
-	return number1 - number2
-}
+// func findDifference(n int, m int) int {
+// 	x := n / m
+// 	number1 := m * x * (x + 1) / 2
+// 	number2 := n*(n+1)/2 - number1
+// 	return number1 - number2
+// }
 
 //_______________________________________________________________________________________________________________________________
+
+// make pairs of an array elements..... -->
+
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	number := []int{-1, 1, 2, 3, 1}
+// 	target := 2
+// 	result := 0
+// 	for i := 0; i < len(number); i++ {
+// 		for j := 0; j < len(number); j++ {
+// 			if number[i]*number[j] < target {
+// 				result++
+// 			}
+// 		}
+// 	}
+// 	fmt.Println("Result : ", result)
+// }
+// _______________________________________________________________________________________________________________________________
+
+// 
