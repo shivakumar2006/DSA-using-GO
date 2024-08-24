@@ -344,4 +344,23 @@
 // }
 // _______________________________________________________________________________________________________________________________
 
-// 
+package main
+
+import "fmt"
+
+func main() {
+	number := []int{1, 1, 2, 3, 4, 4, 5}
+	if len(number) == 0 {
+		fmt.Println("unique count: ", 0)
+	}
+
+	unique := 1
+	for i := 1; i < len(number); i++ {
+		if number[i] != number[i-1] {
+			number[unique] = number[i]
+			unique++
+		}
+	}
+	fmt.Println("unique count: ", unique)
+	fmt.Println("updated numbers : ", number[:unique])
+}
