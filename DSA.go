@@ -369,28 +369,56 @@
 
 //FIND TH EPAIR OF TWO NUMMBERS WHICH IS EQUAL TO THE TARGET ---->>>>
 
-package main
+// package main
 
-import "fmt"
+// import (
+// 	"fmt"
+// 	"math"
+// )
 
-func main() {
-	array := []int{2, 3, 7, 8}
-	target := 9
-	i := 0
-	j := len(array) - 1
+// func main() {
+// 	array := []int{2, 3, 7, 8}
+// 	target := 9
+// 	i := 0
+// 	j := len(array) - 1
 
-	for i < j {
-		sum := array[i] + array[j]
-		if sum < target {
-			i++
-		} else if sum > target {
-			j--
-		} else {
-			fmt.Printf("indices: %d and %d \n", i+1, j+1)
-			return
-		}
-	}
-	fmt.Println("pair not found :(")
-}
+// 	for i < j {
+// 		sum := array[i] + array[j]
+// 		if sum < target {
+// 			i++
+// 		} else if sum > target {
+// 			j--
+// 		} else {
+// 			fmt.Printf("indices: %d and %d \n", i+1, j+1)
+// 			return
+// 		}
+// 	}
+// 	fmt.Println("pair not found :(")
+// }
 
 // _______________________________________________________________________________________________________________________________
+
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	numbers := []int{-4, -1, 0, 3, 10}
+	l := 0
+	r := len(numbers) - 1
+	result := make([]int, len(numbers))
+
+	for i := len(numbers) - 1; i >= 0; i-- {
+		if math.Abs(float64(numbers[l])) > math.Abs(float64(numbers[r])) {
+			result[i] = numbers[l] * numbers[l]
+			l++
+		} else {
+			result[i] = numbers[r] * numbers[r]
+			r--
+		}
+	}
+	fmt.Println("result: ", result)
+}
