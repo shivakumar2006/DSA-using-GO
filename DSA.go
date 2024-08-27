@@ -344,25 +344,51 @@
 // }
 // _______________________________________________________________________________________________________________________________
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	number := []int{1, 1, 2, 3, 4, 4, 5}
+// 	if len(number) == 0 {
+// 		fmt.Println("unique count: ", 0)
+// 	}
+
+// 	unique := 1
+// 	for i := 1; i < len(number); i++ {
+// 		if number[i] != number[i-1] {
+// 			number[unique] = number[i]
+// 			unique++
+// 		}
+// 	}
+// 	fmt.Println("unique count: ", unique)
+// 	fmt.Println("updated numbers : ", number[:unique])
+// }
+
+// _______________________________________________________________________________________________________________________________
+
+//FIND TH EPAIR OF TWO NUMMBERS WHICH IS EQUAL TO THE TARGET ---->>>>
+
 package main
 
 import "fmt"
 
 func main() {
-	number := []int{1, 1, 2, 3, 4, 4, 5}
-	if len(number) == 0 {
-		fmt.Println("unique count: ", 0)
-	}
+	array := []int{2, 3, 7, 8}
+	target := 9
+	i := 0
+	j := len(array) - 1
 
-	unique := 1
-	for i := 1; i < len(number); i++ {
-		if number[i] != number[i-1] {
-			number[unique] = number[i]
-			unique++
+	for i < j {
+		sum := array[i] + array[j]
+		if sum < target {
+			i++
+		} else if sum > target {
+			j--
+		} else {
+			fmt.Printf("indices: %d and %d \n", i+1, j+1)
+			return
 		}
 	}
-	fmt.Println("unique count: ", unique)
-	fmt.Println("updated numbers : ", number[:unique])
+	fmt.Println("pair not found :(")
 }
-
-// _______________________________________________________________________________________________________________________________
