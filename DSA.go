@@ -398,6 +398,33 @@
 
 // _______________________________________________________________________________________________________________________________
 
+// package main
+
+// import (
+// 	"fmt"
+// 	"math"
+// )
+
+// func main() {
+// 	numbers := []int{-4, -1, 0, 3, 10}
+// 	l := 0
+// 	r := len(numbers) - 1
+// 	result := make([]int, len(numbers))
+
+// 	for i := len(numbers) - 1; i >= 0; i-- {
+// 		if math.Abs(float64(numbers[l])) > math.Abs(float64(numbers[r])) {
+// 			result[i] = numbers[l] * numbers[l]
+// 			l++
+// 		} else {
+// 			result[i] = numbers[r] * numbers[r]
+// 			r--
+// 		}
+// 	}
+// 	fmt.Println("result: ", result)
+// }
+
+// Find the square root of an array and sorted them in ascending order.
+
 package main
 
 import (
@@ -406,19 +433,19 @@ import (
 )
 
 func main() {
-	numbers := []int{-4, -1, 0, 3, 10}
+	array := []int{-4, -2, 0, 3, 10}
 	l := 0
-	r := len(numbers) - 1
-	result := make([]int, len(numbers))
+	r := len(array) - 1
+	result := make([]int, len(array))
 
-	for i := len(numbers) - 1; i >= 0; i-- {
-		if math.Abs(float64(numbers[l])) > math.Abs(float64(numbers[r])) {
-			result[i] = numbers[l] * numbers[l]
+	for i := len(array) - 1; i >= 0; i-- {
+		if math.Abs(float64(array[l])) > math.Abs(float64(array[r])) {
+			result[i] = array[l] * array[l]
 			l++
 		} else {
-			result[i] = numbers[r] * numbers[r]
+			result[i] = array[r] * array[r]
 			r--
 		}
 	}
-	fmt.Println("result: ", result)
+	fmt.Println("result of an array : ", result)
 }
